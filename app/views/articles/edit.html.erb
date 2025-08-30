@@ -1,17 +1,5 @@
 <%= form_with scope: :article, url: patch_article_path, method: :patch, local: true do |f| %>
 
-  <p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name%>
-  </p>
-
-  <p>
-    <%= f.label :body %><br/>
-    <%= f.text_field :body%>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+<%= render 'shared/form', f: f%>
 
   <% end %>

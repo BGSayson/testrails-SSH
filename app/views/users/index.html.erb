@@ -1,0 +1,22 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Account creation date:</th>
+      <th><%= link_to 'Link to Articles', articles_path %></th>
+      <th><%= link_to 'Sign Up', sign_up_path %></th>
+      <th><%= link_to 'Back to home', root_path %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <%= render user %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

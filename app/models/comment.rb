@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  validates :comment_body, presence: true, uniqueness: false
+  validates :comment_body, presence: true
 end

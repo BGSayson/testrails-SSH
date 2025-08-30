@@ -1,0 +1,25 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Account creation date:</th>
+      <th><%= link_to 'Link to Articles', articles_path %></th>
+      <th><%= link_to 'Back to Users', users_path %> </th>
+      <th><%= link_to 'Back to home', root_path %></th>
+    </tr>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @user.id %> </td>
+      <td><%= @user.username %> </td>
+      <td><%= @user.password %> </td>
+      <td><%= @user.created_at %> </td>
+      <td><%= link_to 'Edit user information', edit_information_path(@user.id) %> </td>
+      <td><%= button_to 'Delete', delete_account_path(@user.id), data:{ turbo_method: :delete, turbo_confirm: 'Are you sure?' }, method: :delete %> </td>
+  </tbody>
+</table>

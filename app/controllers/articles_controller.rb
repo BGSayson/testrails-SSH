@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
-  
+
   def edit # GET /articles/:id/edit ###gets the form to edit selected article
     @article = Article.find(params[:id])
   end
@@ -33,11 +33,11 @@ class ArticlesController < ApplicationController
     # Article.where(id: 7).update(name: "wasddahat", body: "adashuh")
     # @article.name = params[:name]
     # @article.body = params[:body]
-     #/articles
+    # /articles
     redirect_to articles_path
   end
   
-  def delete #DELETE/POST /articles/:id # deletes selected article
+  def delete # DELETE/POST /articles/:id # deletes selected article
     @article = Article.find(params[:id])
     @article = Article.delete(params[:id])
     redirect_to articles_path

@@ -1,0 +1,5 @@
+<%= form_with scope: :user, url: create_user_path, local: true do |f| %>
+
+<%= render '/users/user_shared/form', f: f%>
+
+  <% end %>
