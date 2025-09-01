@@ -12,23 +12,27 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-    @comment = @article.comments.find(params[:id])
     # @comment.article_id
     # @comment.id = params[:id]
     render :edit
   end
 
   def update
-    @article = Article.find(params[:id])
+    @comment = Comment.find(params[:id])
     @comment.update(comment_params)
 
-    redirect_to article_path(params[:id])
+    redirect_to article_path(@comment.article_id)
   end
 
   def delete
-    @comment = comment.find(params[:id])
-    @comment.destroy(params[:id])
-    redirect_to articles_path
+    @comment = Comment.find(params[:id])
+
+    if @comment = Comment.delete(params[:id])
+      @article = Article.find(params[:id])
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
   end
 
   private
