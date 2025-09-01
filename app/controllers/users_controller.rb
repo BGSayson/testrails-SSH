@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  require "bcrypt"
   def index # GET /users
     @users = User.all
   end

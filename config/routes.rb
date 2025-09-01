@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/articles/:id" => "articles#show", as: "article"
   get "/articles/:id/edit" => "articles#edit", as: "edit_article"
   patch "/articles/:id" => "articles#update", as: "patch_article"
-  delete "/articles/:id" => "articles#delete", as: "delete_article"
+  delete "/articles/:id" => "articles#delete", as: "delete_article" 
 
   get "/users" => "users#index"
   get "/users/new" => "users#new", as: "sign_up"
@@ -21,6 +21,13 @@ Rails.application.routes.draw do
   get "/users/:id/edit" => "users#edit", as: "edit_information"
   patch "/users/:id" => "users#update", as: "update_information"
   delete "/users/:id" => "users#delete", as: "delete_account"
+
+  post "/articles/:id" => "comments#create", as: "article_comments"
+  get "/articles/:id/comment/:article_id/edit" => "comments#edit", as: "edit_comment"
+  patch "/articles/:article_id/comment/:id" => "comments#update", as: "update_comment"
+  delete "/articles/:article_id/comment/:id" => "comment#delete", as: "delete_comment"
+
+  # get ""
   # get "/users" => "users#index"
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)

@@ -4,6 +4,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Body</th>
+      <th><%= link_to "Articles", articles_path %></th>
     </tr>
   </thead>
 
@@ -15,3 +16,6 @@
     </tr>
   </tbody>
 </table>
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
